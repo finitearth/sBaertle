@@ -16,7 +16,7 @@ python train.py
 
 def get_args():
     arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument("--model_checkpoint", type=str, default="Shahm/bart-german") #GermanT5/t5-efficient-gc4-all-german-small-el32
+    arg_parser.add_argument("--model_checkpoint", type=str, default="GermanT5/t5-efficient-gc4-all-german-small-el32")
     arg_parser.add_argument("--num_epochs", type=int, default=5)
     arg_parser.add_argument("--batch_size", type=int, default=16)
     arg_parser.add_argument("--to_german", action="store_true")
@@ -50,8 +50,7 @@ def get_datasets():
     df_wiki = pd.read_csv("data/wiki_similarity_filtered_nobrackets.csv")
     df_wiki = df_wiki[df_wiki["score"]>0.75]
     df_dict = pd.read_csv("data/schwaebisches_dictionary.csv")
-    df = pd.concat([df_wiki, df_dict], ignore_index=True) #pd.read_csv("data/schwaebisches_dictionary.csv")#
-    # df = df.dropna()
+    df = pd.concat([df_wiki, df_dict], ignore_index=True)
     train_df = df.sample(frac=0.8)
     test_df = df.drop(train_df.index)
     
@@ -64,7 +63,7 @@ def get_datasets():
     return train_ds, test_ds
 
 def get_model():
-    if args.model_checkpoint in ["bert-base-german-cased"]: #"facebook/bart-large-cnn", 
+    if args.model_checkpoint in ["bert-base-german-cased"]: 
         tokenizer = transformers.AutoTokenizer.from_pretrained(args.model_checkpoint)
         model = EncoderDecoderModel.from_encoder_decoder_pretrained("bert-base-german-cased", "bert-base-german-cased")
         
