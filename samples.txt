@@ -1,0 +1,16 @@
+prompt = "A Bix."
+prompt = "A sekkelbleede Bix."
+
+prompt = "S' Mädle isch schee!"
+prompt = "Dia Ärbad do isch a kiddzliche Sach!"
+prompt = "Wo isch mei scheenes Oy?"
+prompt = "Was willsch'd mache?"
+prompt = "Abbr schleinig"
+prompt = "a kloi Mugge"
+prompt = "Cash in de Täsch"
+prompt = "Hosch mir ai Weggle?"
+prompt = "Dädsch mir des gäba?"
+
+
+prompt = "Musch du schiffä?"
+prompt = "Moscht musch megga!"
